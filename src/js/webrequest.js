@@ -78,7 +78,7 @@ function onBeforeRequest(details) {
   var tabDomain = getHostForTab(tab_id);
   var requestDomain = window.extractHostFromURL(url);
 
-  if (badger.isPrivacyBadgerDisabled(tabDomain)) {
+  if (!badger.isPrivacyBadgerEnabled(tabDomain)) {
     return {};
   }
 
@@ -237,7 +237,7 @@ function onHeadersReceived(details) {
   var tabDomain = getHostForTab(tab_id);
   var requestDomain = window.extractHostFromURL(url);
 
-  if (badger.isPrivacyBadgerDisabled(tabDomain)) {
+  if (!badger.isPrivacyBadgerEnabled(tabDomain)) {
     return {};
   }
 
