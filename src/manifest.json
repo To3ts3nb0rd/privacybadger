@@ -6,7 +6,9 @@
       "id": "jid1-MnnxcxisBPnSXQ@jetpack"
     }
   },
+  // incognito attribute specfies how to deal with the information from incognito mode
   "incognito": "spanning",
+  // permissions are specified here; this will be informed to the user
   "permissions": [
     "tabs",
     "http://*/*",
@@ -20,7 +22,8 @@
     "privacy",
     "unlimitedStorage"
   ],
-  "background": {
+  // makes a background html-page, that includes all the js files specified into <script>
+  "background": { 
     "scripts": [
       "js/bootstrap.js",
       "lib/punycode.js",
@@ -43,6 +46,8 @@
       "js/background.js"
     ]
   },
+  // this specifies javascript that get injected into pages, that are in specified in the matches section
+  // also possible to time the run
   "content_scripts": [
     {
       "js": [
@@ -91,6 +96,8 @@
   "manifest_version": 2,
   "minimum_chrome_version": "18.0",
   "name": "__MSG_name__",
+  // browseraction is about the button that is added to the browser top right. 
+  // the popup is what pops out when you click the icon.
   "browser_action": {
     "default_icon": {
       "19": "icons/badger-19.png",
